@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '6539228289451763',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v12.0'
+          });
+        };
+      </script>
+     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+     <script>
+       
+      function attach() {
+        document.getElementById('shareBtn').onclick = function() {
+        FB.ui({
+          display: 'popup',
+          method: 'share',
+          href: 'https://developers.facebook.com/docs/',
+        }, function(response){
+          console.log(response, 'successfully tweeted');
+        });
+      }
+      }
+     </script>
+</head>
+<body>
+    <button id='shareBtn'>Share</button>
+    <button onclick="attach()">Attach</button>
+</body>
+</html>
